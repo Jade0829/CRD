@@ -1,0 +1,33 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: manager-role
+rules:
+- apiGroups:
+  - gls.excrd.com
+  resources:
+  - glsstorages
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - gls.excrd.com
+  resources:
+  - glsstorages/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - gls.excrd.com
+  resources:
+  - glsstorages/status
+  verbs:
+  - get
+  - patch
+  - update

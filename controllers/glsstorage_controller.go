@@ -54,13 +54,13 @@ func (r *GlsstorageReconciler) Reconcile(ctx context.Context, req ctrl.Request) 
 
 	// TODO(user): your logic here
 
-	Glsstorage = &glsv1.Glsstorage{}
+	Glsstorage := &glsv1.Glsstorage{}
 
 	err := r.Client.Get(ctx, req.NamespacedName, Glsstorage)
 
 	if err != nil {
 		if errors.IsNotFound(err) {
-			return ctl.Result{}, nil
+			return ctrl.Result{}, nil
 		}
 		return ctrl.Result{}, err
 	}
@@ -104,12 +104,6 @@ func (r *GlsstorageReconciler) Reconcile(ctx context.Context, req ctrl.Request) 
 	_ = r.Client.Create(context.Backgroud(), GlsPVC)
 
 	return ctrl.Result{}, nil
-}
-
-func (r *GlsstorageReconciler) Delete(pvcConfig pvcConfig) error {
-	ctx := context.Background()
-
-	pvcClient := &corev1.PersistentVolumeClaim.Delete()
 }
 
 // SetupWithManager sets up the controller with the Manager.
