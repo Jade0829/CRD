@@ -1,4 +1,4 @@
-apiVersion: gls.excrd.com/v1
+apiVersion: gls.my.domain/v1
 kind: Glsstorage
 metadata:
   name: glsstorage-sample

@@ -5,7 +5,7 @@ metadata:
   name: glsstorage-viewer-role
 rules:
 - apiGroups:
-  - gls.excrd.com
+  - gls.my.domain
   resources:
   - glsstorages
   verbs:
@@ -13,7 +13,7 @@ rules:
   - list
   - watch
 - apiGroups:
-  - gls.excrd.com
+  - gls.my.domain
   resources:
   - glsstorages/status
   verbs:

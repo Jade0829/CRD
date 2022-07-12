@@ -2,7 +2,7 @@
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
-  name: glsstorages.gls.excrd.com
+  name: glsstorages.gls.my.domain
 spec:
   conversion:
     strategy: Webhook

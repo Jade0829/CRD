@@ -1,4 +1,4 @@
-module github.com/jade0829/crd
+module github.com/Jade0829/crd
 
 go 1.18
 
