@@ -54,7 +54,7 @@ func (r *GlsstorageReconciler) Reconcile(ctx context.Context, req ctrl.Request) 
 
 	// TODO(user): your logic here
 
-	Glsstorage := &glsv1.Glsstorage{}
+	Glsstorage := &glsv1.Glsstorage{}.spec
 
 	err := r.Client.Get(ctx, req.NamespacedName, Glsstorage)
 
