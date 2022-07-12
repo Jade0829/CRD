@@ -42,9 +42,9 @@ type GlsstorageSpec struct {
 	// Important: Run "make" to regenerate code after modifying this file
 
 	// Foo is an example field of Glsstorage. Edit glsstorage_types.go to remove/update
-	name string `json:"name,omitempty"`
-	sc   SC     `json:"sc,omitempty"`
-	pvc  PVC    `json:"pvc,omitempty"`
+	Name string `json:"name,omitempty"`
+	Sc   SC     `json:"sc,omitempty"`
+	Pvc  PVC    `json:"pvc,omitempty"`
 }
 
 // GlsstorageStatus defines the observed state of Glsstorage

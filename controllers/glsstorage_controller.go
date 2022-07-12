@@ -54,7 +54,7 @@ func (r *GlsstorageReconciler) Reconcile(ctx context.Context, req ctrl.Request) 
 
 	// TODO(user): your logic here
 
-	Glsstorage := &glsv1.Glsstorage{}.spec
+	Glsstorage := &glsv1.Glsstorage{}
 
 	err := r.Client.Get(ctx, req.NamespacedName, Glsstorage)
 
@@ -65,8 +65,9 @@ func (r *GlsstorageReconciler) Reconcile(ctx context.Context, req ctrl.Request) 
 		return ctrl.Result{}, err
 	}
 
-	scConfig := Glsstorage.sc
-	pvcConfig := Glsstorage.pvc
+	spec := Glssotorage.Spec
+	scConfig := Sepc.Sc
+	pvcConfig := Spec.Pvc
 
 	var provisioner string
 
@@ -77,7 +78,7 @@ func (r *GlsstorageReconciler) Reconcile(ctx context.Context, req ctrl.Request) 
 	}
 	GlsSC := &storagev1.StorageClass{
 		ObjectMeta: metav1.ObjectMeta{
-			Name: Glsstorage.name + "sc",
+			Name: spec.Name + "sc",
 		},
 		Provisioner: provisioner,
 	}
@@ -86,13 +87,13 @@ func (r *GlsstorageReconciler) Reconcile(ctx context.Context, req ctrl.Request) 
 
 	GlsPVC := &corev1.PersistentVolumeClaim{
 		ObjectMeta: metav1.ObjectMeta{
-			Name: Glsstorage.name,
+			Name: spec.Name,
 		},
 		Spec: &corev1.PersistentVolumeClaimSpec{
 			AccesccModes: []corev1.PersistentVolumeAccessMode{
 				"ReadWriteMany",
 			},
-			storageClassName: Glsstorage.name + "sc",
+			storageClassName: spec.Name + "sc",
 			Resources: corev1.ResourceRequirements{
 				Requests: corev1.ResourceList{
 					corev1.ResourceStorage: pvcConfig.limit,
