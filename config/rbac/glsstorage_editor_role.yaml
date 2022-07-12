@@ -1,0 +1,24 @@
+# permissions for end users to edit glsstorages.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: glsstorage-editor-role
+rules:
+- apiGroups:
+  - gls.excrd.com
+  resources:
+  - glsstorages
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - gls.excrd.com
+  resources:
+  - glsstorages/status
+  verbs:
+  - get

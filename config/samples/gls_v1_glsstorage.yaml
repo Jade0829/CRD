@@ -1,0 +1,6 @@
+apiVersion: gls.excrd.com/v1
+kind: Glsstorage
+metadata:
+  name: glsstorage-sample
+spec:
+  # TODO(user): Add fields here

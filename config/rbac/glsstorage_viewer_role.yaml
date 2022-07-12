@@ -1,0 +1,20 @@
+# permissions for end users to view glsstorages.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: glsstorage-viewer-role
+rules:
+- apiGroups:
+  - gls.excrd.com
+  resources:
+  - glsstorages
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - gls.excrd.com
+  resources:
+  - glsstorages/status
+  verbs:
+  - get
