@@ -27,7 +27,7 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/client"
 	"sigs.k8s.io/controller-runtime/pkg/log"
 
-	glsv1 "github.com/jade0829/crd/api/v1"
+	glsv1 "github.com/Jade0829/crd/api/v1"
 )
 
 // GlsstorageReconciler reconciles a Glsstorage object

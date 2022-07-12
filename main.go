@@ -31,8 +31,8 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/healthz"
 	"sigs.k8s.io/controller-runtime/pkg/log/zap"
 
-	glsv1 "github.com/jade0829/crd/api/v1"
-	"github.com/jade0829/crd/controllers"
+	glsv1 "github.com/Jade0829/crd/api/v1"
+	"github.com/Jade0829/crd/controllers"
 	//+kubebuilder:scaffold:imports
 )
 

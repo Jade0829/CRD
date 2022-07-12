@@ -30,7 +30,7 @@ import (
 	logf "sigs.k8s.io/controller-runtime/pkg/log"
 	"sigs.k8s.io/controller-runtime/pkg/log/zap"
 
-	glsv1 "github.com/jade0829/crd/api/v1"
+	glsv1 "github.com/Jade0829/crd/api/v1"
 	//+kubebuilder:scaffold:imports
 )
 
